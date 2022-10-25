@@ -1,26 +1,47 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Barlow:wght@200;300;400;500&family=Maven+Pro&family=Montserrat+Alternates&family=Open+Sans:wght@400;500;600&family=Raleway&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*------------------------- START -------------------------------*/
+
+.nav-item {
+	@apply cursor-pointer overflow-hidden hover:text-cyan-400 transition-all ease-in-out duration-300 text-neutral-100;
+}
+.nav-item-active {
+	@apply text-orange-400;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.category-item {
+	@apply text-neutral-400 cursor-pointer;
+}
+
+.category-item-active {
+	@apply text-white;
+}
+
+/*------------------------- END --------------------------------*/
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+	html {
+		color-scheme: dark;
+	}
+	body {
+		color: white;
+		background: #131313;
+	}
 }
