@@ -12,7 +12,6 @@ const Slug = () => {
 	useEffect(() => {
 		if (!router.isReady) return;
 		const { slug } = router.query;
-		console.log(slug);
 		fetch(`http://localhost:3000/api/blogposts?slug=${slug}`)
 			.then((e) => {
 				return e.json();
@@ -38,8 +37,12 @@ const Slug = () => {
 				</h1>
 				<p className="mt-5 p-3 content h-fit mx-3 border border-neutral-700">
 					<b>
-						<p>Author: ed on : </p>
-						<p>Category: </p>
+						<p>Author : {blogData.author}</p>
+						<p>
+							Posted On :{" "}
+							{`${blogData.posted.date} - ${blogData.posted.month} - ${blogData.posted.year}`}
+						</p>
+						<p>Category : {blogData.category}</p>
 					</b>
 					<br /> <br />
 					{blogData.content}

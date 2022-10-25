@@ -12,9 +12,9 @@ export default async function handler(req, res) {
 	let output = [];
 	if (category) {
 		// Checks if a category query exists if yes, try to fetch data
-		JSON.parse(data).blogs.forEach((e) => {
-			if (e.category == category) output.push(e);
+		output = JSON.parse(data).blogs.filter((e) => {
+			if (e.category === category) return e;
 		});
 		res.status(200).json(output);
-	} // else res.status(200).json(JSON.parse(data).blogs); // if no, just pass all the data
+	} else res.status(200).json(JSON.parse(data).blogs);
 }

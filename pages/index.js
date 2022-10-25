@@ -11,11 +11,13 @@ export default function Home() {
 	blogs.length = 4;
 
 	useEffect(() => {
+		console.log("using effect");
 		fetch("http://localhost:3000/api/getBlogs")
 			.then((e) => {
 				return e.json();
 			})
 			.then((e) => {
+				console.log(e);
 				setBlogs(e);
 			});
 	}, []);
